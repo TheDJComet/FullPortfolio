@@ -1,0 +1,61 @@
+@import '@fontsource-variable/jost';
+@import '@fontsource-variable/overpass-mono';
+@import 'tailwindcss';
+
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+@custom-variant hero-in-view (html[data-hero-in-view] &);
+
+:root {
+  color-scheme: dark;
+  --slate: #2f4f4f;
+  --racing-green: #004225;
+  --skobeloff: #007474;
+  --panel: #263f3f;
+  --text: #f1f7f5;
+  --text-soft: #c3d4d0;
+  --mint: #7fd6cf;
+  --hairline: rgb(255 255 255 / 0.16);
+}
+
+@theme inline {
+  --color-background: var(--slate);
+  --color-foreground: var(--text);
+  --color-panel: var(--panel);
+  --color-primary: var(--racing-green);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--skobeloff);
+  --color-secondary-foreground: #ffffff;
+  --color-muted-foreground: var(--text-soft);
+  --color-mint: var(--mint);
+  --color-accent: var(--skobeloff);
+  --color-accent-foreground: #ffffff;
+  --color-border: var(--hairline);
+  --color-input: var(--hairline);
+  --color-ring: var(--mint);
+  --font-sans: 'Jost Variable', system-ui, sans-serif;
+  --font-mono: 'Overpass Mono Variable', ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--mint);
+    outline-offset: 3px;
+  }
+}

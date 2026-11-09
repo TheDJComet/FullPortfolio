@@ -24,9 +24,9 @@ export const profile = {
 
 
 export const resumes = [
-  { label: 'Full-stack resume', file: 'public/resumes/JohnsonDandre Fullstack Resume.pdf' },
-  { label: 'Frontend resume', file: 'public/resumes/JohnsonDandre Frontend Resume.pdf' },
-  { label: 'Cybersecurity resume', file: 'public/resumes/JohnsonDandre Cybersecurity Resume.pdf' },
+  { label: 'Full-stack resume', file: '/resumes/JohnsonDandre Fullstack Resume.pdf' },
+  { label: 'Frontend resume', file: '/resumes/JohnsonDandre Frontend Resume.pdf' },
+  { label: 'Cybersecurity resume', file: '/resumes/JohnsonDandre Cybersecurity Resume.pdf' },
 ]
 
 export const projects = [

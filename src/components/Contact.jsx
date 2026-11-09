@@ -1,9 +1,12 @@
+import { useState } from 'react'
+import ResumeDialog from '@/components/ResumeDialog'
 import { profile, resumes } from '@/data/portfolio'
 
 const year = new Date().getFullYear()
 const linkClass = 'underline underline-offset-4 hover:text-mint'
 
 export default function Contact() {
+  const [activeResume, setActiveResume] = useState(null)
   const availableResumes = resumes.filter((resume) => resume.file)
 
   return (
@@ -19,9 +22,9 @@ export default function Contact() {
           <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
             {availableResumes.map((resume) => (
               <li key={resume.file}>
-                <a href={resume.file} className={linkClass}>
+                <button type="button" onClick={() => setActiveResume(resume)} className={linkClass}>
                   {resume.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -44,6 +47,7 @@ export default function Contact() {
           </ul>
         </div>
       </div>
+      {activeResume && <ResumeDialog resume={activeResume} onClose={() => setActiveResume(null)} />}
     </footer>
   )
 }

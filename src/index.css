@@ -50,6 +50,11 @@
     }
   }
 
+  /* Keep the page still behind an open popup. */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   body {
     @apply bg-background font-sans text-foreground antialiased;
   }

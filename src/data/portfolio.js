@@ -50,7 +50,7 @@ export const projects = [
     summary:
       'A marketplace with buyer, seller and admin roles. I led the frontend and built the .NET and SQLite backend, including authentication, role-based access, cart, checkout, orders and admin moderation.',
     tags: ['.NET', 'SQLite', 'RBAC', 'UML'],
-    image: '',
+    image: '/projects/ecommerce.jpg',
     live: '',
     code: '',
   },
